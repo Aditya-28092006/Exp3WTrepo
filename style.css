@@ -5,7 +5,7 @@ body {
   min-height: 100vh;
 
   /* More visible dark gradient */
-  background: linear-gradient(270deg, #353434, #717171, #3c3c3c, #636363);
+  background: linear-gradient(270deg, #707070, #5f5f5f, #4e4e4e, #3c3c3c);
   background-size: 1200% 1200%;
   animation: darkGrayGradient 40s ease infinite; /* slightly slower for smoother movement */
 }
@@ -22,7 +22,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 25px 30px;
   background-color: rgba(50, 50, 50, 0.8);
   position: sticky;
   top: 0;
@@ -32,8 +32,9 @@ nav {
 }
 
 .nav-left {
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 36px;
   color: #eee;
 }
 
@@ -84,10 +85,14 @@ nav {
 
 /* Sections */
 section h2 {
-  font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.9rem;
+  letter-spacing: 0.5px;
+  font-size: 45px;
   margin-bottom: 20px;
   color: #eee;
-  border-bottom: 2px solid #555;
+
   display: inline-block;
   padding-bottom: 5px;
   text-align: center;
@@ -149,3 +154,10 @@ footer {
   text-align: center;
   color: #eee;             /* for dark gray aesthetic */
 }
+ 
+ad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
