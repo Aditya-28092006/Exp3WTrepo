@@ -88,3 +88,31 @@
 
 </body>
 </html>
+<script>
+  // Prevent the browser from restoring the previous scroll position
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  // Handle pages restored from back-forward cache (bfcache)
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) window.scrollTo(0, 0);
+  });
+
+  // On normal load, ensure top of page and remove any hash/focus
+  window.addEventListener('load', function () {
+    if (location.hash) {
+      // remove fragment so browser doesn't jump to it
+      history.replaceState(null, '', location.pathname + location.search);
+    }
+    window.scrollTo(0, 0);
+    if (document.activeElement && document.activeElement !== document.body) {
+      document.activeElement.blur();
+    }
+  });
+
+  // Optional: try to reset before unload so some browsers start at top
+  window.addEventListener('beforeunload', function () {
+    window.scrollTo(0, 0);
+  });
+</script>
