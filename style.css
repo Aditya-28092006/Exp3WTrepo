@@ -161,4 +161,15 @@ ad {
   justify-content: center;
 }
 
+h1.mb-4{
+ color: #fff;
+   font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.9rem;
+  font-size: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 

@@ -5,6 +5,7 @@
   <title>Landing Page</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -20,6 +21,8 @@
       <a href="#features">Features</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
+      <a href="photogallery.html">Photos</a>
+      <a href="carousel.html">Carousel</a>
     </div>
   </nav>
 
@@ -73,21 +76,7 @@
 
 
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      Email: contact@example.com
-    </p>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 My Website</p>
-  </footer>
-
-</body>
-</html>
 <script>
   // Prevent the browser from restoring the previous scroll position
   if ('scrollRestoration' in history) {
@@ -116,3 +105,107 @@
     window.scrollTo(0, 0);
   });
 </script>
+
+  <style>
+    /* Gallery layout */
+    .gallery-card {
+      border-radius: 50%;
+      border-radius: .6rem;
+      background: #00000000;
+      position: relative;
+    }
+
+    /* Image styles: start fully grayscale */
+    .gallery-card img {
+      border-radius: 10%;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transform: scale(1);
+      transition: filter .35s ease, transform .35s ease, box-shadow .35s ease;
+      will-change: filter, transform;
+    }
+
+    /* On hover or keyboard focus, remove grayscale and "pop" slightly */
+    .gallery-card:hover img,
+    .gallery-card:focus-within img,
+    .gallery-card:active img {
+      filter: grayscale(0%);
+      transform: scale(1.04);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    }
+
+    /* Make the card focusable outline visible for keyboard users */
+    .gallery-card:focus-within {
+      outline: 3px solid rgba(13,110,253,0.25); /* subtle blue focus ring */
+      outline-offset: 4px;
+    }
+
+    /* Optional caption overlay */
+    .gallery-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: .5rem .75rem;
+      color: #fff;
+      font-weight: 600;
+      font-size: .95rem;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.6) 100%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="container py-5">
+    <h1 class="mb-4">Photo Gallery</h1>
+
+    <!-- Responsive 3-image gallery using Bootstrap grid -->
+    <section class="row g-3">
+      <div class="col-12 col-sm-6 col-lg-4">
+        <!-- Using a link/figure so the item is keyboard-focusable (tabbable) -->
+        <a href="#" class="gallery-card d-block" tabindex="0" aria-label="AC 1 image">
+          <img src="ac1.jpg" alt="AC 1" class="img-fluid" />
+          
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="#" class="gallery-card d-block" tabindex="0" aria-label="AC 2 image">
+          <img src="ac2.jfif" alt="AC 2" class="img-fluid" />
+          
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="#" class="gallery-card d-block" tabindex="0" aria-label="AC 3 image">
+          <img src="ac3.jfif" alt="AC 3" class="img-fluid" />
+          
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- No extra JS required for the hover/color behavior; Bootstrap JS is included per request -->
+
+
+
+    <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      Email: contact@example.com
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 My Website</p>
+  </footer>
+
+</body>
+</html>
